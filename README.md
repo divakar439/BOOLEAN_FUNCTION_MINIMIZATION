@@ -13,11 +13,6 @@ F2=xy’z+x’y’z+w’xy+wx’y+wxy
 Hardware – PCs, Cyclone II , USB flasher
 
 **Software – Quartus prime**
-
-**Theory**
-
-**Logic Diagram**
-
 **Procedure**
 
 1.	Type the program in Quartus software.
@@ -32,62 +27,40 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:**
-
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
-Developed by: VIJEY K S
-RegisterNumber: 212223040239
-
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+Developed by:divakar E
+RegisterNumber:212222053001
 ```
-F1
-module exp02(a,b,c,d,f1);
-input a,b,c,d;
-output f1;
-assign f1=((~b & ~d) | (a & b & ~c) | (~a & b & d));
-endmodule
-
-F2
-module project22(w,x,y,z,f2);
-input w,x,y,z;
-output f2;
-assign f2= ((~y&z)|(w&y)|(x&y));
+module Boolean_min(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+and g1(s,ydash,z);
+and g2(t,x,y);
+and g3(u,w,z);
+or g4(f2,s,t,u);
 endmodule
 ```
-
-**TRUTH TABLE**
-![image](https://github.com/user-attachments/assets/22370d1b-17b9-4c79-b5ad-9c9c1422cef6)
-
-![image](https://github.com/user-attachments/assets/01a37c85-5a5d-43cb-a5dd-f9bbe50557e7)
-
-
 
 **RTL realization**
-
-**F1**
-![new f1](https://github.com/user-attachments/assets/1146e2a2-1578-409e-b809-a3a199a9c940)
+![Screenshot 2024-10-20 224320](https://github.com/user-attachments/assets/d4bea5c3-0bdc-4ecb-aebd-3756e75967e3)
 
 
+**Truth table**
+![Screenshot 2024-10-20 224328](https://github.com/user-attachments/assets/36225508-8300-4088-9e6f-277341d526ab)
 
 
-**F2**
-![new f2](https://github.com/user-attachments/assets/21352699-f9ba-49c2-8dce-9c998af97902)
-
-
-
-
-**Output:**
-
-**F1**
-![new f1o](https://github.com/user-attachments/assets/64961e2f-0873-424a-9f56-0bc82eee99c6)
-
-
-
-
-**F2**
-![new f2o](https://github.com/user-attachments/assets/6c13bd79-880d-45e6-8686-14a95fcc687f)
-
-
-
+**Timing Diagram**
+![Screenshot 2024-10-20 224344](https://github.com/user-attachments/assets/98586421-0fe9-4d78-8581-8078ac75a1ce)
 
 **Result:**
 
